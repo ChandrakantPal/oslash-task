@@ -1,0 +1,7 @@
+.dropdown-footer__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 14px;
+  background: #f9fafb;
+}
