@@ -1,30 +1,43 @@
-.storybook-button {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  border: 0;
-  border-radius: 3em;
-  cursor: pointer;
-  display: inline-block;
-  line-height: 1;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 4px;
+  outline: none;
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
 }
-.storybook-button--primary {
-  color: white;
-  background-color: #1ea7fd;
-}
-.storybook-button--secondary {
-  color: #333;
-  background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
-}
-.storybook-button--small {
-  font-size: 12px;
-  padding: 10px 16px;
-}
-.storybook-button--medium {
+.button span {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
   font-size: 14px;
-  padding: 11px 20px;
+  line-height: 20px;
+  color: #374151;
+  /* margin-right: 9.6px; */
 }
-.storybook-button--large {
-  font-size: 16px;
-  padding: 12px 24px;
+
+.dark {
+  border: 1px solid #111827;
+  background: #111827;
+}
+.dark span {
+  color: #ffffff;
+}
+.square {
+  border-radius: 0;
+}
+.left-rounded {
+  border-radius: 6px 0 0 6px;
+}
+.right-rounded {
+  border-radius: 0 6px 6px 0;
+}
+.icon-left-spacing span {
+  margin-left: 9.6px;
+}
+.icon-right-spacing span {
+  margin-right: 9.6px;
 }
