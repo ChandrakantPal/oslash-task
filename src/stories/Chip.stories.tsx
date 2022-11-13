@@ -8,7 +8,7 @@ const meta: Meta = {
 };
 export default meta;
 
-export const DefaultSizeRegularAvatar = () => (
+export const DefaultChip = () => (
   <Chip
     id={5}
     text="Product"
