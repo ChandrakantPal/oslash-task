@@ -1,24 +1,34 @@
 import React from "react";
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from "@storybook/react";
 
-import { FlexRowContainer } from "./FlexRowContainer";
+import { FlexRowContainer, FlexRowContainerProps } from "./FlexRowContainer";
 
 const meta: Meta = {
   title: "FlexRowContainer",
   component: FlexRowContainer,
+  argTypes: {
+    children: {
+      defaultValue: (
+        <>
+          <p>Item 1</p>
+          <p>Item 2</p>
+        </>
+      ),
+    },
+  },
 };
 export default meta;
 
-export const FlexRowContainerJustifyCenter = () => (
-  <FlexRowContainer justify="center">
-    <p>Item 1</p>
-    <p>Item 2</p>
-  </FlexRowContainer>
+const Template: Story<FlexRowContainerProps> = (args) => (
+  <FlexRowContainer {...args} />
 );
 
-export const FlexRowContainerJustifySpaceBetween = () => (
-  <FlexRowContainer justify="space-between">
-    <p>Item 1</p>
-    <p>Item 2</p>
-  </FlexRowContainer>
-);
+export const FlexRowContainerJustifyCenter = Template.bind({});
+FlexRowContainerJustifyCenter.args = {
+  justify: "center",
+};
+
+export const FlexRowContainerJustifySpaceBetween = Template.bind({});
+FlexRowContainerJustifySpaceBetween.args = {
+  justify: "space-between",
+};

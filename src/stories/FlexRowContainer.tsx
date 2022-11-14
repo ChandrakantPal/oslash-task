@@ -2,13 +2,14 @@ import classNames from "classnames";
 import * as React from "react";
 import "./flexrowcontainer.css";
 
-interface FlexRowContainerProps {
+export interface FlexRowContainerProps extends React.PropsWithChildren {
   justify: "center" | "space-between" | "flex-start" | "flex-end";
 }
 
-export const FlexRowContainer: React.FC<
-  React.PropsWithChildren<FlexRowContainerProps>
-> = ({ children, justify }) => {
+export const FlexRowContainer: React.FC<FlexRowContainerProps> = ({
+  children,
+  justify,
+}) => {
   return (
     <div
       className={classNames("flex__container", {
