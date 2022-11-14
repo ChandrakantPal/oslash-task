@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./chip.css";
 
-interface ChipProps {
+export interface ChipProps {
   id: number;
   removeInvite: (id: number) => void;
   text: string;
