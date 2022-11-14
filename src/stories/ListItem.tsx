@@ -2,12 +2,12 @@ import classNames from "classnames";
 import * as React from "react";
 import "./listitem.css";
 
-interface ListItemProps {
+export interface ListItemProps extends React.PropsWithChildren {
   itemDirection?: "row" | "column";
   onClick?: () => void;
 }
 
-export const ListItem: React.FC<React.PropsWithChildren<ListItemProps>> = ({
+export const ListItem: React.FC<ListItemProps> = ({
   children,
   itemDirection,
   onClick,
