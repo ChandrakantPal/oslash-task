@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
-import { Typography } from "./Typography";
+import { Typography, TypographyProps } from "./Typography";
 
 const meta: Meta = {
   title: "Typography",
@@ -8,7 +8,15 @@ const meta: Meta = {
 };
 export default meta;
 
-export const Title = () => <Typography variant="title">Title</Typography>;
-export const Subtitle = () => (
-  <Typography variant="subtitle">Subtitle</Typography>
-);
+const Template: Story<TypographyProps> = (args) => <Typography {...args} />;
+
+export const Title = Template.bind({});
+Title.args = {
+  variant: "title",
+  children: "Title",
+};
+export const Subtitle = Template.bind({});
+Subtitle.args = {
+  variant: "subtitle",
+  children: "Subtitle",
+};

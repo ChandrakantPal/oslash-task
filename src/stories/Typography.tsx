@@ -2,11 +2,11 @@ import * as React from "react";
 import classNames from "classnames";
 import "./typography.css";
 
-interface TypographyProps {
+export interface TypographyProps extends React.PropsWithChildren {
   variant?: "title" | "subtitle";
 }
 
-export const Typography: React.FC<React.PropsWithChildren<TypographyProps>> = ({
+export const Typography: React.FC<TypographyProps> = ({
   variant = "title",
   children,
 }) => {
