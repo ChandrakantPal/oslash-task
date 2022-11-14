@@ -1,51 +1,45 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
-import { DropdownContainer } from "./DropdownContainer";
+import { DropdownContainer, DropdownContainerProps } from "./DropdownContainer";
 
 const meta: Meta = {
   title: "DropdownContainer",
   component: DropdownContainer,
+  argTypes: {
+    onClose: () => {
+      console.log("closed");
+    },
+  },
 };
 export default meta;
 
-export const DefaultDropdownContainer = () => (
-  <DropdownContainer
-    onClose={() => {
-      console.log("clicked");
-    }}
-  >
+const Template: Story<DropdownContainerProps> = (args) => (
+  <DropdownContainer {...args} />
+);
+
+export const DefaultDropdownContainer = Template.bind({});
+DefaultDropdownContainer.args = {
+  children: (
     <p style={{ padding: 12 }}>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste molestias
       aperiam laudantium quia aspernatur architecto consequatur repellendus sit,
       delectus accusantium! Quaerat ab quis recusandae laboriosam molestias?
       Impedit unde dolorum eaque?
     </p>
-  </DropdownContainer>
-);
+  ),
+};
 
-export const DropdownContainerWithMultipleItems = () => (
-  <DropdownContainer
-    onClose={() => {
-      console.log("clicked");
-    }}
-  >
-    <p style={{ padding: 12, border: "0.5px solid #E5E7EB", margin: 0 }}>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste molestias
-      aperiam laudantium quia aspernatur architecto consequatur repellendus sit,
-      delectus accusantium! Quaerat ab quis recusandae laboriosam molestias?
-      Impedit unde dolorum eaque?
-    </p>
-    <p style={{ padding: 12, border: "0.5px solid #E5E7EB", margin: 0 }}>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste molestias
-      aperiam laudantium quia aspernatur architecto consequatur repellendus sit,
-      delectus accusantium! Quaerat ab quis recusandae laboriosam molestias?
-      Impedit unde dolorum eaque?
-    </p>
-    <p style={{ padding: 12, border: "0.5px solid #E5E7EB", margin: 0 }}>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste molestias
-      aperiam laudantium quia aspernatur architecto consequatur repellendus sit,
-      delectus accusantium! Quaerat ab quis recusandae laboriosam molestias?
-      Impedit unde dolorum eaque?
-    </p>
-  </DropdownContainer>
-);
+export const DropdownContainerWithMultipleItems = Template.bind({});
+DropdownContainerWithMultipleItems.args = {
+  children: (
+    <>
+      <p style={{ padding: 12, borderBottom: "0.5px solid #e5e7eb" }}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste molestias
+      </p>
+      <p style={{ padding: 12 }}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste molestias
+        aperiam laudantium quia aspernatur
+      </p>
+    </>
+  ),
+};
