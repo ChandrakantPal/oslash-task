@@ -1,11 +1,20 @@
-## Available Scripts
+## Scripts for React App
 
 In the project directory, you can run:
 
-### `npm start` or `yarn start`
+First step installing packages for that please run
+## `npm install` or `yarn`
+
+To start the react app run 
+## `npm start` or `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+
+## Script for Storybook
+
+To Start Storybook run
+## `npm run storybook` or `yarn storybook`
+
+Runs the Storybook instance on [http://localhost:6006](http://localhost:6006) in the browser.
