@@ -1,27 +1,28 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
-import { ToggleButton } from "./ToggleButton";
+import { ToggleButton, ToggleButtonProps } from "./ToggleButton";
 
 const meta: Meta = {
   title: "ToggleButton",
   component: ToggleButton,
+  argTypes: {
+    toggle: {
+      defaultValue: () => {
+        console.log("toggle");
+      },
+    },
+  },
 };
 export default meta;
 
-export const ToggleOn = () => (
-  <ToggleButton
-    value={true}
-    toggle={() => {
-      console.log("toggle");
-    }}
-  />
-);
+const Template: Story<ToggleButtonProps> = (args) => <ToggleButton {...args} />;
 
-export const ToggleOff = () => (
-  <ToggleButton
-    value={false}
-    toggle={() => {
-      console.log("toggle");
-    }}
-  />
-);
+export const ToggleOn = Template.bind({});
+ToggleOn.args = {
+  value: true,
+};
+
+export const ToggleOff = Template.bind({});
+ToggleOff.args = {
+  value: false,
+};

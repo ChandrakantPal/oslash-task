@@ -2,7 +2,7 @@ import classNames from "classnames";
 import * as React from "react";
 import "./togglebutton.css";
 
-interface ToggleButtonProps {
+export interface ToggleButtonProps {
   value: boolean;
   toggle: () => void;
 }
