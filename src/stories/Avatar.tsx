@@ -2,12 +2,12 @@ import * as React from "react";
 import classNames from "classnames";
 import "./avatar.css";
 
-interface AvatarProp {
+export interface AvatarProps extends React.PropsWithChildren {
   variant?: "regular" | "square";
   size?: "small" | "medium" | "large";
 }
 
-export const Avatar: React.FC<React.PropsWithChildren<AvatarProp>> = ({
+export const Avatar: React.FC<AvatarProps> = ({
   variant = "regular",
   size = "medium",
   children,

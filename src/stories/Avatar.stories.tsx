@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
-import { Avatar } from "./Avatar";
+import { Avatar, AvatarProps } from "./Avatar";
 
 const meta: Meta = {
   title: "Avatar",
@@ -8,50 +8,60 @@ const meta: Meta = {
 };
 export default meta;
 
-export const DefaultSizeRegularAvatar = () => (
-  <Avatar>
+const Template: Story<AvatarProps> = (args) => <Avatar {...args} />;
+
+export const DefaultSizeRegularAvatar = Template.bind({});
+DefaultSizeRegularAvatar.args = {
+  children: (
     <img
       src="/images/avatar1.png"
       alt="avatar"
       style={{ width: "100%", height: "100%", objectFit: "cover" }}
     />
-  </Avatar>
-);
+  ),
+};
 
-export const SmallSizeRegularAvatar = () => (
-  <Avatar size="small">
+export const SmallSizeRegularAvatar = Template.bind({});
+SmallSizeRegularAvatar.args = {
+  size: "small",
+  children: (
     <img
       src="/images/avatar1.png"
       alt="avatar"
       style={{ width: "100%", height: "100%", objectFit: "cover" }}
     />
-  </Avatar>
-);
+  ),
+};
 
-export const LargeSizeRegularAvatar = () => (
-  <Avatar size="large">
+export const LargeSizeRegularAvatar = Template.bind({});
+LargeSizeRegularAvatar.args = {
+  size: "large",
+  children: (
     <img
       src="/images/avatar1.png"
       alt="avatar"
       style={{ width: "100%", height: "100%", objectFit: "cover" }}
     />
-  </Avatar>
-);
+  ),
+};
 
-export const SamllSizeSquareAvatar = () => (
-  <Avatar variant="square" size="small">
-    <p style={{ color: "#FFFFFF", fontSize: 14 }}>E</p>
-  </Avatar>
-);
+export const SamllSizeSquareAvatar = Template.bind({});
+SamllSizeSquareAvatar.args = {
+  size: "small",
+  variant: "square",
+  children: <p style={{ color: "#FFFFFF", fontSize: 14 }}>E</p>,
+};
 
-export const MediumSizeSquareAvatar = () => (
-  <Avatar variant="square" size="medium">
-    <p style={{ color: "#FFFFFF", fontSize: 14 }}>E</p>
-  </Avatar>
-);
+export const MediumSizeSquareAvatar = Template.bind({});
+MediumSizeSquareAvatar.args = {
+  variant: "square",
+  size: "medium",
+  children: <p style={{ color: "#FFFFFF", fontSize: 14 }}>E</p>,
+};
 
-export const LargeSizeSquareAvatar = () => (
-  <Avatar variant="square" size="large">
-    <p style={{ color: "#FFFFFF", fontSize: 14 }}>E</p>
-  </Avatar>
-);
+export const LargeSizeSquareAvatar = Template.bind({});
+LargeSizeSquareAvatar.args = {
+  variant: "square",
+  size: "large",
+  children: <p style={{ color: "#FFFFFF", fontSize: 14 }}>E</p>,
+};
